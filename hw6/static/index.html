@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel=stylesheet type=text/css href="static/mvp.css">
+    <link rel=stylesheet type=text/css href="static/style.css">
+    <script type="text/javascript" src="static/jquery-3.6.0.js"> </script>
+    <script type="text/javascript" src="static/util.js"> </script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+    <title>Stock</title>
+</head>
+<body>
+
+<div class="search_bar">
+    <h2>Stock Search</h2>
+    <form id="search_form">
+        <button type="button" id="search_button">
+            <img src="static/src/search-solid.svg" alt="">
+        </button>
+
+        <label>
+            <input required id="inputSymbol" type="text" placeholder="Enter Stock Ticker Symbol">
+        </label>
+
+        <button type='button' id="cross_button">
+            <img src="static/src/times-solid.svg" alt="">
+        </button>
+    </form>
+</div>
+
+<div id="invalid_symbol">
+    <div id="alert_text">
+        Error: No record has been found, please enter a valid symbol
+    </div>
+
+</div>
+
+
+<div class="symbol_info" id="symbol_info_container">
+    <div class="tab">
+        <button class="tab_links" id="tab_company">Company</button>
+        <button class="tab_links" id="tab_summary">Stock Summary</button>
+        <button class="tab_links" id="tab_charts">Charts</button>
+        <button class="tab_links" id="tab_news">Latest News</button>
+    </div>
+
+    <div id="company" class="tab_content">
+        <div>
+            <img id="logo" src="#" alt="">
+        </div>
+        <table>
+            <tr>
+                <th>Company Name</th>
+                <td id="name"></td>
+            </tr>
+            <tr>
+                <th>Stock Ticker Symbol</th>
+                <td id="ticker"></td>
+            </tr>
+            <tr>
+                <th>Stock Exchange Code</th>
+                <td id="exchange"></td>
+            </tr>
+            <tr>
+                <th>Company Start Date</th>
+                <td id="ipo"></td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td id="finnhubIndustry"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="summary" class="tab_content">
+        <table>
+            <tr>
+                <th>Stock Ticker Symbol</th>
+                <td id="stock_sticker"></td>
+            </tr>
+            <tr>
+                <th>Trading Day</th>
+                <td id="t"></td>
+            </tr>
+            <tr>
+                <th>Previous Closing Price</th>
+                <td id="pc"></td>
+            </tr>
+            <tr>
+                <th>Opening Price</th>
+                <td id="o"></td>
+            </tr>
+            <tr>
+                <th>High Price</th>
+                <td id="h"></td>
+            </tr>
+            <tr>
+                <th>Low Price</th>
+                <td id="l"></td>
+            </tr>
+            <tr>
+                <th>Change</th>
+                <td><span id="d"></span><img class="arrow_img" id="d_arrow" src="#" alt=""></td>
+            </tr>
+            <tr>
+                <th>Change Percent</th>
+                <td><span id="dp"></span><img class="arrow_img" id="dp_arrow" src="#" alt=""></td>
+            </tr>
+        </table>
+        <div id="recommendation_trend">
+            <div id="recommendation_index">
+                <div id="indicator_order_left"><span>Strong</span> <span>Sell</span></div>
+                <div class="indicator" id="strong_sell_box">
+                    <span class="indicator_num" id="strongSell"></span>
+                </div>
+                <div class="indicator" id="sell_box">
+                    <span class="indicator_num" id="sell"></span>
+                </div>
+                <div class="indicator" id="hold_box">
+                    <span class="indicator_num" id="hold"></span>
+                </div>
+                <div class="indicator" id="buy_box">
+                    <span class="indicator_num" id="buy"></span>
+                </div>
+                <div class="indicator" id="strong_buy_box">
+                    <span class="indicator_num" id="strongBuy"></span>
+                </div>
+                <div id="indicator_order_right"><span>Strong</span> <span>Buy</span></div>
+            </div>
+        </div>
+        <div id="recommendation_bottom_text">
+            <span>Recommendation Trends</span>
+        </div>
+
+    </div>
+
+    <div id="charts" class="tab_content">
+        <div id="high_chart"></div>
+    </div>
+
+    <div id="news" class="tab_content">
+    </div>
+
+</div>
+</body>
+
+<script>
+    document.getElementById("search_button").addEventListener("click", search_by_symbol)
+    document.getElementById("search_form").addEventListener("submit", function(event) {search_by_symbol(); event.preventDefault()})
+    document.getElementById("cross_button").addEventListener("click", remove_symbol)
+    document.getElementById("tab_company").addEventListener("click", function(event) {show_company(event)})
+    document.getElementById("tab_summary").addEventListener("click", function(event) {show_summary(event)})
+    document.getElementById("tab_charts").addEventListener("click", function(event) {show_charts(event)})
+    document.getElementById("tab_news").addEventListener("click", function(event) {show_news(event)})
+</script>
+</html>

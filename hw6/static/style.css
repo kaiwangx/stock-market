@@ -1,0 +1,243 @@
+body {
+    text-align: center;
+    background-image: url("src/back.svg");
+    background-repeat: no-repeat;
+}
+
+.search_bar {
+    margin-top: 30px;
+}
+
+.search_bar form {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 800px;
+    height: 50px;
+    padding: 0;
+    border-radius: 15px;
+}
+
+.search_bar #search_button {
+    background: transparent;
+    padding: 15px 20px;
+    margin: 0;
+    border: 0;
+}
+
+.search_bar #cross_button {
+    background: transparent;
+    padding: 15px 15px;
+    margin: 0;
+    border: 0 solid #e9e9e9;
+    border-left-width: 1px;
+}
+
+.search_bar img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.search_bar label {
+    display: block;
+    margin: auto 0;
+}
+
+.search_bar input {
+    margin: auto;
+    width: 660px;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    height: 25px;
+}
+
+#invalid_symbol {
+    width:800px;
+    background-color: #f8f9fa;
+    display: none;
+    margin: 250px auto auto;
+    font-size: 23px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 5%), 0 6px 20px 0 rgb(0 0 0 / 5%);
+}
+
+#invalid_symbol #alert_text {
+    margin: auto;
+
+}
+
+.symbol_info {
+    display: none;
+    width: 1200px;
+    margin: 180px auto;
+}
+
+/* Style the tab */
+.symbol_info .tab {
+    overflow: hidden;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+/* Style the buttons inside the tab */
+.symbol_info .tab button {
+    margin: 0;
+    background-color: inherit;
+    color: #333;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 15px 10px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.symbol_info .tab button:hover {
+    background-color: #aaa;
+}
+
+/* Create an active/current tablink class */
+.symbol_info .tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.symbol_info .tab_content {
+    display: none;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+.symbol_info table {
+    border-left: 0;
+    border-right: 0;
+}
+
+.symbol_info .tab_content #logo{
+    display: none;
+    margin: 20px auto;
+    height: 130px;
+    width: 130px;
+}
+
+.symbol_info .tab_content td {
+    display: flex;
+}
+
+.symbol_info .tab_content table tr, table td, table th {
+    text-align: right;
+    width: fit-content;
+}
+
+.symbol_info .tab_content .arrow_img {
+    display: none;
+    height: 20px;
+    width: 20px;
+    margin: auto 10px;
+}
+
+.symbol_info .tab_content #recommendation_trend {
+    margin-top: 20px;
+    display: flex;
+}
+
+.symbol_info .tab_content #recommendation_index {
+    display: flex;
+    margin: auto;
+}
+
+.symbol_info .tab_content #recommendation_index .indicator_num{
+    margin: auto;
+}
+
+.symbol_info .tab_content .indicator {
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    display: flex;
+}
+
+.symbol_info .tab_content #indicator_order_left {
+    display: flex;
+    flex-direction: column;
+    color:#ef5384;
+    margin-right: 10px;
+}
+
+.symbol_info .tab_content #indicator_order_right {
+    color:#67d193;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.symbol_info .tab_content #strong_sell_box {
+    background-color: #ed2938;
+}
+
+.symbol_info .tab_content #sell_box {
+    background-color: #b25f4a;
+}
+
+.symbol_info .tab_content #hold_box {
+    background-color: #77945c;
+}
+
+.symbol_info .tab_content #buy_box {
+    background-color: #3bca6d;
+}
+
+.symbol_info .tab_content #strong_buy_box {
+    background-color: #00ff7f;
+}
+
+.symbol_info .tab_content #recommendation_bottom_text{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.symbol_info .tab_content .news_block{
+    background-color: #f8f9fa;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+}
+
+.symbol_info .tab_content .news_image{
+    display: flex;
+    padding: 20px;
+}
+
+.symbol_info .tab_content .news_image img{
+    margin: auto;
+    width: 150px;
+    height: 150px;
+}
+
+.symbol_info .tab_content .news_text h4, p, .news_url{
+    margin-bottom: 0;
+    text-align: left;
+}
+.symbol_info .tab_content .news_text, p, .news_url{
+    margin-top: 10px;
+}
+
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
