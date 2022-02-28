@@ -3,7 +3,7 @@ stock lookup tool showing company info, real time stock price, chart and latest 
 
 access at https://csci571-hw6-kwang425-python.wl.r.appspot.com/
 
-framework & technology: JavaScript, Python, flask, AWS, Highchart, Finnhub API
+framework & technology: JavaScript, Python, flask, GCP, Highchart, Finnhub API
 
 main features:
 1. company info ![alt text](https://github.com/kaiwangx/stock-market/blob/master/img/company.PNG?raw=true)
