@@ -1,7 +1,7 @@
 # stock-market
 stock lookup tool showing company info, real time stock price, chart and latest news
 
-access at https://csci571-hw6-kwang425-python.wl.r.appspot.com/
+access at https://stock-market-js.wl.r.appspot.com/
 
 framework & technology: JavaScript, Python, flask, GCP, Highchart, Finnhub API
 
